@@ -1,0 +1,50 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Projelerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Proje Sayfası</h2>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Proje Adı</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
+        <th>Güncelle</th>
+        <th>Detay</th>
+    </tr>
+    @{ string durum = "";
+        }
+    @foreach (var x in Model)
+    {
+        if(x.Durum == true)
+        {
+            durum = "Aktif";
+        }
+        if (x.Durum == false)
+        {
+            durum = "Pasif";
+        }
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Projeadi</td>
+            <td>@durum</td>
+            <td>
+                <a href="/Proje/Aktif/@x.Id" class="btn btn-outline-primary">Aktif Yap</a>
+                <a href="/Proje/Pasif/@x.Id" class="btn btn-outline-secondary">Pasif Yap</a>
+                <a href="/Proje/Sil/@x.Id" class="btn btn-outline-danger">Proje Sil</a>
+            </td>
+            <td>
+                <a href="/Proje/Guncelle/@x.Id" class="btn btn-warning">Proje Güncelle</a>
+            </td>
+            <td>
+                <a href="/Proje/Detay/@x.Id" class="btn btn-success">Proje Detay</a>
+            </td>
+        </tr>
+     }
+</table>
+<a href="/Proje/Ekle/" class="btn btn-info">Proje Ekle</a>

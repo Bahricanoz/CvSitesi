@@ -1,0 +1,24 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Sertifikalarim
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3> Sertika İşlemleri</h3>
+</div>
+<form class="form-group" method="post">
+    <div style="margin-top:20px;">
+        <label>Sertifka Ad:</label>
+        @Html.TextBoxFor(x => x.Sertifkaad, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-success">Sertifika Güncelle</button>
+        <a href="/Sertifika/Sil/@ViewBag.stf" class="btn btn-danger">Sertifika Sil</a>
+    </div>
+</form>
+

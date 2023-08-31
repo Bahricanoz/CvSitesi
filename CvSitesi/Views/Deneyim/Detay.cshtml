@@ -1,0 +1,32 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Deneyimlerim
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Deneyim Detay Sayfası</h2>
+</div>
+<form class="form-group">
+    <div style="margin-top:20px;">
+        <label>Id:</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Deneyim Ad:</label>
+        @Html.TextBoxFor(x => x.DeneyimAd, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Ünvan:</label>
+        @Html.TextBoxFor(x => x.Unvan, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik:</label>
+        @Html.TextAreaFor(x => x.İcerik, new { @class = "form-control", @readonly = "readonly", @style = "height:150px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+</form>
+

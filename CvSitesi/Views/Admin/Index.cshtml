@@ -1,0 +1,32 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Admin İşlemleri Sayfası</h3>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Mail</th>
+        <th>Güncelle</th>
+        <th>Detay</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Mail</td>
+                    <td><a href="/Admin/Guncelle/@x.Id" class="btn btn-warning">Admin Güncelle</a></td>
+                    <td><a href="/Admin/Detay/@x.Id" class="btn btn-success">Admin Detay</a></td>
+
+                </tr>
+            }
+</table>

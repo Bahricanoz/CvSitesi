@@ -1,0 +1,11 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Sosyalmedya>
+
+<div class="social-icons">
+    @foreach (var x in Model)
+    {
+        <a class="social-icon" href="@x.Link" target="_blank"><i class="@x.Ikon"></i></a>
+    }
+
+
+</div>

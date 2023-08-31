@@ -1,0 +1,40 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Egitimhayati>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin:20px 0px;">
+    <h2>Eğitim Bilgileri Sayfası</h2>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Okul Adı</th>
+        <th>Bölüm</th>
+        <th>Ortalama</th>
+        <th>Tarih</th>
+        <th>İşlemler</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var x in Model)
+     {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Okulad</td>
+            <td>@x.Bolum</td>
+            <td>@x.Notort</td>
+            <td>@x.Tarih</td>
+            <td>
+                <a href="/Egitim/sil/@x.Id" class="btn btn-danger">Eğitim Sil</a>
+            </td>
+            <td>
+                <a href="/Egitim/Guncelle/@x.Id" class="btn btn-success">Eğitim Güncelle</a>
+            </td>
+        </tr>
+     }
+</table>
+<div style="margin-top:20px;">
+    <a href="/Egitim/Ekle/" class="btn btn-info">Eğitim Ekle</a>
+</div>

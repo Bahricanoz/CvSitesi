@@ -1,0 +1,40 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Egitimhayati
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Eğitim Güncelleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("Guncelle", "Egitim", FormMethod.Post))
+{
+    <div style="margin-top:20px;">
+        <label>Id:</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Okul:</label>
+        @Html.TextBoxFor(x => x.Okulad, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tür:</label>
+        @Html.TextBoxFor(x => x.Tur, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Bölüm:</label>
+        @Html.TextBoxFor(x => x.Bolum, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Not Ortalama:</label>
+        @Html.TextBoxFor(x => x.Notort, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+      <button class="btn btn-success">Eğitim Güncelle</button>
+    </div>
+}
+

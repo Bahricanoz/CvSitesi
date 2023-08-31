@@ -1,0 +1,27 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Sosyalmedya
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Sosyal Medya Güncelleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("Guncelle", "Sosyalmedya", FormMethod.Post))
+{
+    <div style="margin-top:20px;">
+        <label>Sosyal Medya:</label>
+        @Html.TextBoxFor(x => x.Iconad, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Link:</label>
+        @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İkon:</label>
+        @Html.TextBoxFor(x => x.Ikon, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-success">Sosyal Medya Güncelle</button>
+    </div>
+}

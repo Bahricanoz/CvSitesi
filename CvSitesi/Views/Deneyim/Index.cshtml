@@ -1,0 +1,53 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Deneyimlerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin:20px;">
+    <h2>Deneyim Sayfası</h2>
+    <a href="/Deneyim/DeneyimEkle/" class="btn btn-info">Deneyim Ekle</a>
+</div>
+<table style="margin-left:20px;" class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Deneyim Yeri</th>
+        <th>Ünvan</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
+        <th>Güncelle</th>
+        <th>Detay</th>
+    </tr>
+    <tbody>
+        @{  string durum = "";}
+        @foreach(var x in Model)
+        {
+            if(x.Durum == false)
+            {
+                durum = "Pasif";
+            }
+            if(x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.DeneyimAd</td>
+                    <td>@x.Unvan</td>
+                    <td>@durum</td>
+                    <td>
+                        <a href="/Deneyim/Aktifyap/@x.Id" class="btn btn-outline-primary"> Deneyim Aktif</a>
+                        <a href="/Deneyim/Pasifyap/@x.Id" class="btn btn-outline-secondary"> Deneyim Pasif</a>
+                        <a href="/Deneyim/Sil/@x.Id" class="btn btn-outline-danger"> Deneyim Sil</a>
+                    </td>
+                    <td>
+                        <a href="/Deneyim/DeneyimGuncelle/@x.Id" class="btn btn-warning">Deneyim Güncelle</a>
+                    </td>
+                    <td>
+                        <a href="/Deneyim/Detay/@x.Id" class="btn btn-success">Deneyim Detay</a>
+                    </td>
+                </tr>
+         }
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Projelerim
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin-top:20px;">
+    <h3>Proje Detay Sayfası</h3>
+</div>
+<form class="form-group">
+    <div style="margin-top:20px;">
+        <label>Id:</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Ad:</label>
+        @Html.TextBoxFor(x => x.Projeadi, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Link:</label>
+        @Html.TextBoxFor(x => x.Link, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Açıklama:</label>
+        @Html.TextAreaFor(x => x.Açıklama, new { @class = "form-control", @readonly = "readonly", @style = "height:100px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+</form>

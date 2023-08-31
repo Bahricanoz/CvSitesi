@@ -1,0 +1,29 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Mesajlar
+<section class="resume-section" id="iletisim">
+    <div class="resume-section-content">
+        <h2 class="mb-5">İLETİŞİM</h2>
+        <form method="post" class="form-group">
+            <div style="margin-top:20px;">
+                <label>İsim:</label>
+                <input type="text" required="" placeholder="Lütfen İsminizi Giriniz..." class="form-control" name="Name"/>
+            </div>
+            <div style="margin-top:20px;">
+                <label>Mail:</label>
+                <input type="text" required="" placeholder="Lütfen Mail Adresinizi Giriniz..." class="form-control" inputmode="email"  name="Mail" "/>
+                @Html.ValidationMessageFor(x=>x.Mail,"", new {@style="color:blue;"})
+            </div>
+            <div style="margin-top:20px;">
+                <label>Konu:</label>
+                <input type="text" required="" placeholder="Lütfen Konuyu Giriniz..." class="form-control" name="Konu" />
+            </div>
+            <div style="margin-top:20px;">
+                <label>Mesaj:</label>
+                <textarea type="text" required="" placeholder="Lütfen Mesajınızı Giriniz..." class="form-control" style="height:150px;" name="Mesaj" ></textarea>
+            </div>
+            <div style="margin-top:20px;">
+                <button class="btn btn-info"> Mesaj Gönder</button>
+            </div>
+        </form>
+
+    </div>
+</section>

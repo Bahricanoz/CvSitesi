@@ -1,0 +1,88 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Yetenek>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Yetenek Listem</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <a href="/Yetenek/Ekle/" class="btn btn-info">Yetenek Ekle</a>
+                        <br />
+                        <br />
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">Id</th>
+                                    <th>Yetenek Adı</th>
+                                    <th>Derece</th>
+                                    <th style="width: 40px">Yüzde</th>
+                                    <th>Güncelle</th>
+                                    <th>Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ string labelrenk = "";}
+                                @{ string derece = "";}
+                                @foreach (var x in Model)
+                                {
+                                    if (x.oran >= 0 && x.oran <= 50)
+                                    {
+                                        labelrenk = "badge bg-danger";
+                                        derece = "progress-bar bg-danger";
+                                    }
+                                    if (x.oran > 50 && x.oran < 70)
+                                    {
+                                        labelrenk = "badge bg-yellow";
+                                        derece = "progress-bar bg-yellow";
+                                    }
+                                    if (x.oran >= 70 && x.oran < 85)
+                                    {
+                                        labelrenk = "badge bg-primary";
+                                        derece = "progress-bar bg-primary";
+                                    }
+                                    if (x.oran >= 85 && x.oran <= 100)
+                                    {
+                                        labelrenk = "badge bg-success";
+                                        derece = "progress-bar bg-success";
+                                    }
+                                    <tr>
+                                        <td>@x.Id</td>
+                                        <td>@x.Yetenekad</td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="@derece" style="width: @x.oran%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="@labelrenk">@x.oran%</span></td>
+                                        <td>
+                                            <a href="/Yetenek/Guncelle/@x.Id" class="btn btn-info btn-sm">
+                                                <i class="fas fa-pencil-alt"></i>
+                                                Yetenek Düzenle
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/Yetenek/Sil/@x.Id" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                                Yetenek Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>

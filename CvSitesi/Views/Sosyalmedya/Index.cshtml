@@ -1,0 +1,93 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Sosyalmedya>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Sosyal Medya Sayfası</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <a href="/Sosyalmedya/Ekle/" class="btn btn-info">Sosyal Medya Ekle</a>
+                                    <br />
+                                    <br />
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">Id</th>
+                                                <th>Sosyal Medya</th>
+                                                <th>Durum</th>
+                                                <th>İşlemler</th>
+                                                <th>Güncelle</th>
+                                                <th>Detay</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{ string durum = "";}
+                                            @foreach (var x in Model)
+                                            {
+                                                if (x.Durum == true)
+                                                {
+                                                    durum = "Aktif";
+                                                }
+                                                if (x.Durum == false)
+                                                {
+                                                    durum = "Pasif";
+                                                }
+                                                <tr>
+                                                    <td>@x.Id</td>
+                                                    <td>@x.Iconad</td>
+                                                    <td>@durum</td>
+                                                    <td>
+                                                        <a href="/Sosyalmedya/Aktif/@x.Id" class="btn btn-outline-primary">Aktif Yap</a>
+                                                        <a href="/Sosyalmedya/Pasif/@x.Id" class="btn btn-outline-dark">Pasif Yap</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/Sosyalmedya/Guncelle/@x.Id" class="btn btn-warning">Sosyal Medya Güncelle</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/Sosyalmedya/Detay/@x.Id" class="btn btn-success">Sosyal Medya Detay</a>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                                
+                            </div>
+                            <!-- /.card -->
+
+                            
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.row -->
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+       
+    
+</body>
+</html>
+
+

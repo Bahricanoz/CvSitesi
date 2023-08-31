@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Proje Ekleme Sayfası</h3>
+</div>
+<form method="post" class="form-group">
+    <div style="margin-top:20px;">
+        <label>Proje Adı:</label>
+        <input type="text" name="Projeadi" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Link:</label>
+        <input type="text" name="Link" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Aciklama:</label>
+        <textarea type="text" name="Açıklama" class="form-control" required="" style="height:100px;"></textarea>
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        <input type="text" name="Tarih" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-success">Proje Ekle</button>
+    </div>
+</form>
+

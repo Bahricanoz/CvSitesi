@@ -1,0 +1,24 @@
+﻿@model CvSitesi.Models.Entity.Tbl_Yetenek
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Yetenek Ekleme Sayfası</h3>
+</div>
+<form method="post" class="form-group">
+    <div style="margin-top:20px;">
+        <label>Yetenek Ad:</label>
+        <input type="text" name="Yetenekad" class="form-control" />
+        @Html.ValidationMessageFor(x => x.Yetenekad, "", new { @style = "color:blue;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Oran:</label>
+        <input type="text" name="oran" class="form-control"   />
+        @Html.ValidationMessageFor(x=>x.oran , "", new { @style="color:blue;"})
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary">Yetenek Ekle</button>
+    </div>
+</form>

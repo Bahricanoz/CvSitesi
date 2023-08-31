@@ -1,0 +1,17 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Projelerim>
+<section class="resume-section" id="interests">
+    <div class="resume-section-content">
+        <h2 class="mb-5">PROJELERİM</h2>
+        @foreach (var x in Model)
+        {
+            <a href="@x.Link" target="_blank" style="text-decoration: none; font-size:25px;">@x.Projeadi</a> 
+            <div style="margin-top:10px;">
+                <p class="mb-0">@x.Açıklama - @x.Tarih</p>
+            </div>
+            
+        }
+
+    </div>
+</section>
+<hr class="m-0" />

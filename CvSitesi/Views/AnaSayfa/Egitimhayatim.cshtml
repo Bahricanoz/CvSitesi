@@ -1,0 +1,21 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Egitimhayati>
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">EĞİTİM HAYATIM</h2>
+        @foreach (var x in Model)
+        {
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">@x.Okulad</h3>
+                    <div class="subheading mb-3">@x.Tur</div>
+                    <div>@x.Bolum - @x.Okulad</div>
+                    <p>GPA: @x.Notort</p>
+                </div>
+                <div class="flex-shrink-0"><span class="text-primary">@x.Tarih</span></div>
+            </div>
+        }
+
+    </div>
+</section>
+<hr class="m-0" />

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Eğitim Bilgisi Ekleme</h3>
+</div>
+<form method="post" class="form-group">
+    <div style="margin-top:20px;">
+        <label>Okul Ad:</label>
+        <input type="text" name="Okulad" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tür:</label>
+        <input type="text" name="Tur" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Bölüm:</label>
+        <input type="text" name="Bolum" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Not Ortalaması:</label>
+        <input type="text" name="Notort" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        <input type="text" name="Tarih" class="form-control" required="" />
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary">Eğitim Ekle</button>
+    </div>
+</form>
+

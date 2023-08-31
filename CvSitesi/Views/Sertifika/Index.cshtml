@@ -1,0 +1,76 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Sertifikalarim> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="card-body">
+                                        <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="timeline">
+                                        <!-- The timeline -->
+                                        <div class="timeline timeline-inverse">
+                                            <!-- timeline time label -->
+                                            @{ string renk = "";}
+                                            @{ string button = "";}
+                                            @foreach (var x in Model)
+                                            {
+                                                if (x.Id % 2 == 0)
+                                                {
+                                                    renk = "bg-success";
+                                                    button = "btn btn-success";
+                                                }
+                                                if (x.Id % 2 == 1)
+                                                {
+                                                    renk = "bg-primary";
+                                                    button = "btn btn-primary";
+                                                }
+
+                                                <div class="time-label">
+                                                    <a href="/Sertifika/Getir/@x.Id" class="@button">
+                                                        <span class="@renk">
+                                                            @(((DateTime)x.Tarih).ToString("dd-MMM-yyyy"))
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+
+
+                                                <div>
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-body">
+                                                            @x.Sertifkaad
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+
+                                            <div>
+                                            </div>
+                                        </div>
+                                        <a href="/Sertifika/Ekle/" class="btn btn-warning">Sertifika Ekle</a>
+                                    </div>
+                                    <!-- /.tab-content -->
+                                </div><!-- /.card-body -->
+                            </div>
+                            <!-- /.nav-tabs-custom -->
+                        </div>
+                        <!-- /.col -->
+                    <!-- /.row -->
+                </div>
+            </section>
+
+</body>
+</html>
+
+   
+
+
+

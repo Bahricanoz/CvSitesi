@@ -1,0 +1,46 @@
+﻿@using CvSitesi.Models.Entity
+@model List<Tbl_Hakkımda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h3>Hakkımda Sayfası</h3>
+</div>
+<form class="form-group" method="post">
+    @foreach (var x in Model)
+    {
+        <div style="margin-top:20px;">
+            <label>Ad:</label>
+            <input type="text" name="Ad" value="@x.Ad" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Soyad:</label>
+            <input type="text" name="Soyad" value="@x.Soyad" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Resim:</label>
+            <input type="text" name="Resim" value="@x.Resim" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Mail:</label>
+            <input type="text" name="Mail" value="@x.Mail" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Telefon:</label>
+            <input type="text" name="Telefon" value="@x.Telefon" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Okul:</label>
+            <input type="text" name="Okul" value="@x.Okul" class="form-control" required="" />
+        </div>
+        <div style="margin-top:20px;">
+            <label>Aciklama:</label>
+            <textarea rows="6" name="Aciklama"  class="form-control" required="">@x.Aciklama</textarea>
+        </div>
+        <div style="margin-top:20px;">
+            <button class="btn btn-success">Hakkımda Güncelle</button>
+        </div>
+    }
+</form>
