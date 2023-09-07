@@ -10,4 +10,7 @@ Proje Aşamaları:
 - Entity Framework Dbfirst ile veritabanı işlemleri
 - Repository Dessing Pattern olışturuldu
 - Temel Listemele, Güncelleme,Ekleme ve Silme işlemleri
-- 
+- Silme işlemi yerine aktif/pasif alma işleminin yapılması
+- Login Paneli Oluşturulması
+- Admin ile Login , Logout işlemlerinin yapılması
+- Session işlemi
