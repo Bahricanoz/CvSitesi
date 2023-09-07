@@ -8,7 +8,8 @@ Proje Aşamaları:
 -----------------
 - MVC5 kullanarak web uygulamalarının geliştirilmesi
 - Entity Framework Dbfirst ile veritabanı işlemleri
-- Repository Dessing Pattern olışturuldu
+- Repository Dessing Pattern oluşturuldu
+- Anasayfa da PartialView oluşturuldu
 - Temel Listemele, Güncelleme,Ekleme ve Silme işlemleri
 - Silme işlemi yerine aktif/pasif alma işleminin yapılması
 - Login Paneli Oluşturulması
